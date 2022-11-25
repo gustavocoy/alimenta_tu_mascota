@@ -52,7 +52,7 @@ function Navbar(props){
         >
           Usuarios
         </Link>
-        
+
         <Link
             to={"/Contactos"}
             className="me-3 py-2 text-dark text-decoration-none" 
