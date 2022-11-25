@@ -1,32 +1,39 @@
-import logo from './logo.svg';
+
 import './css/App.css';
 //components
 import Navbar from "./components/navbar/Navbar";
 import Nosotros from "./components/Nosotros";
-  
-
+import Inicio from "./components/Inicio";
+import Footer from "./components/footer";
+import ComidaIndex from "./components/comidaparamascotas";
+import Gatos from "./components/comidaparamascotas/gatos";
+import Perros from "./components/comidaparamascotas/perros";
+import {Route, Routes} from "react-router-dom";
+import NoticiasIndex from "./components/noticias";
+import UsuariosIndex from "./components/usuarios";
+import ContactosIndex from "./components/contactos";
 
 function App() {
   return (
     <div>
-<Navbar />
-<Nosotros/>
-<div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        <Navbar />
+        <Routes>
+            <Route path="/"element={<Inicio />}/>
+            <Route path="/Nosotros"element={<Nosotros />}/>
+            <Route path="/Contactos"element={<ContactosIndex />}/>
+            <Route path="/Noticias"element={<NoticiasIndex />}/>
+            <Route path="/Usuarios"element={<UsuariosIndex />}/>
+
+
+            <Route path="/comidaparamascotas"element={<ComidaIndex />}/>
+            <Route path="/comidaparamascotas/gatos"element={<Gatos />}/>
+            <Route path="/comidaparamascotas/perros"element={<Perros />}/>
+        </Routes>
+        
+        
+        <Footer />
+     </div>
     </div>
     
   );
