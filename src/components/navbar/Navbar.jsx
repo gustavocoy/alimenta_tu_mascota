@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import LogButton from "./LogButton";
 
 
 function Navbar(props){
@@ -59,13 +60,14 @@ function Navbar(props){
         >
           Contactos
         </Link>
+        <LogButton logged={props.logged} />
         
        
     
       </nav>
     </div>
     </div>
-    )
+    );
 }
 
 export default Navbar;
